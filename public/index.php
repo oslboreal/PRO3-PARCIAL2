@@ -58,7 +58,7 @@ $app->group('/inscripcion', function (RouteCollectorProxy $group) {
 
 $app->group('/notas', function (RouteCollectorProxy $group) {
     /* Punto 5 */ /* Se hizo por FORM URL ENCODED */
-    $group->put('[/]', NotasController::class . ":addOne")->add(new AuthMiddleware([UserRole::PROFESOR]));
+    $group->put('/{idMateria}', NotasController::class . ":addOne")->add(new AuthMiddleware([UserRole::PROFESOR]));
 
     /* PPunto 8 */
     $group->get('/{idMateria}', NotasController::class . ":getNotas")->add(new AuthMiddleware([UserRole::ADMIN, UserRole::PROFESOR, UserRole::ALUMNO]));
