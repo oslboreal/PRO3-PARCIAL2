@@ -35,12 +35,12 @@ class NotasController
                 $response->getBody()->write(GenericResponse::obtain(true, "Error al crear una nota, alumno inexistente."));
                 $response->withStatus(400);
             } else {
-                
+
                 $dbNota = new Nota();
                 $dbNota->id = 0;
-                $dbNota->id_alumno = $idAlumno;
-                $dbNota->id_materia = $idMateria;
-                $dbNota->nota = $nota;
+                $dbNota->id_alumno = 1;
+                $dbNota->id_materia = 2;
+                $dbNota->nota = 4;
                 $dbNota->save();
 
                 $response->getBody()->write(GenericResponse::obtain(true, "Nota creada correctamente.", $dbNota));
