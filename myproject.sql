@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-11-2020 a las 00:55:30
+-- Tiempo de generación: 17-11-2020 a las 01:02:08
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.2.33
 
@@ -81,8 +81,16 @@ CREATE TABLE `notas` (
   `id_materia` int(11) NOT NULL,
   `nota` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `updated_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `id_alumno` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `notas`
+--
+
+INSERT INTO `notas` (`id`, `id_materia`, `nota`, `created_at`, `updated_at`, `id_alumno`) VALUES
+(0, 2, 4, '2020-11-17 04:01:07', '2020-11-17 04:01:07', 1);
 
 -- --------------------------------------------------------
 
